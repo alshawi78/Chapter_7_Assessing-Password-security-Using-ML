@@ -21,7 +21,7 @@ data = pd.read_csv(filepath,',',error_bad_lines=False)
 data = pd.DataFrame(data)
 passwords = np.array(data)
 
-#check for strenth by shuffling
+#check for strenth by shuffling and check it against the actual password
 random.shuffle(passwords) 
 y = [d[1] for d in passwords]
 #actual passwords 
@@ -37,7 +37,7 @@ lgs.fit(X_train, y_train) #training
 print(lgs.score(X_test, y_test))  #testing
 
 #more testing against the database 
-X_predict = ['faizanahmad','faizanahmad123','faizanahmad##','ajd1348#28t**','ffffffffff','kuiqwasdi','uiquiuiiuiuiuiuiuiuiuiuiui','mynameisfaizan','mynameis123faizan#','Ahmed','123456','abcdef']
+X_predict = ['faizanahsdfgmad','faizanahmsdfgad123','ajd1348#sdfg28t**','kuiqw45454asdi','uiquiui455424','mynamei454s123faizan#','Ahmsdfgsded','12dsfgsd3456','abcdefasdfaa455']
 X_predict = vectorizer.transform(X_predict)
 y_Predict = lgs.predict(X_predict)
 print y_Predict
